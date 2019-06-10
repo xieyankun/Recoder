@@ -11,9 +11,15 @@ class App extends Component {
     const codemirror = document.querySelector('.codemirror');
     console.log('CodeMirror', codemirror);
     const myCodeMirror = CodeMirror(codemirror, {
-      value: "function myScript(){return 100;}\n",
+      value: "",
       mode:  "javascript"
     });
+
+    console.log(myCodeMirror)
+
+    myCodeMirror.on('change', (instance, changeObj) => {
+      console.log(instance, changeObj)
+    })
   }
 
   render() {
